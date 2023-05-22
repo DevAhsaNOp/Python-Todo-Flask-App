@@ -15,14 +15,14 @@
         <div class="p-4 mb-3" style="background-color: #0dcaf040; border-radius: 15px;" >
             <h2>Todo List</h2>
             {% if todos %}
-            <ul>
+            <ol>
             {% for todo in todos %}
                 <li>
-                    <input type="checkbox" {% if todo[3] %}checked{% endif %} onchange="window.location.href='/toggle/{{ todo[0] }}'">
                     {{ todo[1] }} - {{ todo[2] }}
+                    <input type="checkbox" {% if todo[3] %}checked{% endif %} onchange="window.location.href='/toggle/{{ todo[0] }}'">
                 </li>
             {% endfor %}
-            </ul>
+            </ol>
             {% else %}
                 <p class="fw-bold">No todos found!</p>
             {% endif %}
